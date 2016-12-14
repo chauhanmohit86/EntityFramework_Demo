@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DAL.Department>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Department List</h2>
+<table>
+    <tr>
+        <td>Dept Id</td>
+        <td> Name</td>
+        <td>Employee</td>
+    </tr>
+    @foreach (var department in Model)
+    {
+        <tr>
+            <td>@department.Id</td>
+            <td>@department.Name</td>
+            <td>
+                @foreach (var employee in department.Employees)
+                {
+                    <span>@employee.Name </span>
+                }
+
+            </td>
+        </tr>
+    }
+</table>
